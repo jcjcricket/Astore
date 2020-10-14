@@ -1,12 +1,19 @@
-import React from 'react'
-import './app.css'
+import React from 'react';
+import './app.css';
+import { Switch, Route } from 'react-router-dom';
+import Header from '../header';
+import { Homepage, Cartpage } from '../pages';
 
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
-  )
-}
+    <main className="container" role="main">
+      <Header />
+      <Switch>
+        <Route path='/' component={Homepage} exact />
+        <Route path='/cart' component={Cartpage} />
+      </Switch>
+    </main>
+  );
+};
 
 export default App;
