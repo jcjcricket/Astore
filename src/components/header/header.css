@@ -1,19 +1,25 @@
-header {
+.navbar {
   width: 100%;
-  height: 48;
+  height: 7rem;
   display: flex;
+  justify-content: space-between;
   margin: 0;
-  padding: 0;
+  padding: 0 10 0 10;
 }
 
-header .logo {
+.navbar .logo {
   color: #41444B;
   font-family: 'Righteous', cursive;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
-header i {
+.navbar i {
   color: #41444B;
-  font-size: 1rem;
+  font-size: 2rem;
+  display: inline;
 
+}
+
+.cart-group {
+  font-size: 1rem;
 }

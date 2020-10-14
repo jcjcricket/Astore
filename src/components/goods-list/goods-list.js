@@ -9,9 +9,10 @@ import './goods-list.css';
 
 class GoodsList extends Component {
   componentDidMount() {
-    const { storeService } = this.props;
-    const data = storeService.getGoods();
-    this.props.goodsLoaded(data);
+    const { storeService, goodsLoaded } = this.props;
+    storeService.getGoods().then((data) => {
+      goodsLoaded(data);
+    });
   }
 
   render() {
@@ -34,7 +35,7 @@ const mapStateToProps = ({ goods }) => {
 };
 
 const mapDispatchToProps = {
-  goodsLoaded
+  goodsLoaded,
 };
 
 export default withStoreService()(
