@@ -15,9 +15,12 @@ export default class StoreService {
       },
     ];
 
-    return new Promise((res) => {
+    return new Promise((res, rej) => {
       setTimeout(() => {
-        res(this.data);
+        if (Math.random() > 0.2) {
+          res(data);
+        }
+        rej(new Error('Something bad happened'));
       }, 1000);
     });
   }
